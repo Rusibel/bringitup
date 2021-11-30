@@ -47,8 +47,11 @@ export default class MainSlider extends Slider {
 
             item.parentNode.previousElementSibling.addEventListener('click', (e) => {
                 e.preventDefault();
-                this.slideIndex = 1;
-                this.showSlides(this.slideIndex);
+                console.log(e.target.tagName);
+                if(e.target.tagName == 'svg' || e.target.parentNode.tagName == 'svg'){
+                    this.slideIndex = 1;
+                    this.showSlides(this.slideIndex);
+                }
             });
         });
 
